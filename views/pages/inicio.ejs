@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main class="contenedor">
+    <section class="bienvenida">
+      <h2>Hola, <%= usuario.nombre %> 👋</h2>
+      <p class="texto-suave">Sesión iniciada con <strong><%= usuario.correo %></strong>. Bienvenido a BarberHUB.</p>
+    </section>
+
+    <section class="tarjetas">
+      <a class="tarjeta" href="#">Citas</a>
+      <a class="tarjeta" href="#">Barberos</a>
+      <a class="tarjeta" href="#">Servicios</a>
+      <a class="tarjeta" href="#">Facturación</a>
+    </section>
+  </main>
+</body>
+</html>

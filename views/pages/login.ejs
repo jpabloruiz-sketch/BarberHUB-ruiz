@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="body-login">
+  <main class="login-contenedor">
+    <div class="login-tarjeta">
+      <div class="login-marca">
+        <h1 class="logo logo-grande">Barber<span>HUB</span></h1>
+        <p class="login-subtitulo">Ingresa a tu cuenta para continuar</p>
+      </div>
+
+      <% if (typeof exito !== 'undefined' && exito) { %>
+        <div class="alerta alerta-exito" role="status"><%= exito %></div>
+      <% } %>
+
+      <% if (typeof error !== 'undefined' && error) { %>
+        <div class="alerta" role="alert"><%= error %></div>
+      <% } %>
+
+      <form action="/login" method="POST" class="formulario" autocomplete="on">
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com"
+                 required autofocus autocomplete="username">
+        </div>
+
+        <div class="campo">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" placeholder="••••••••"
+                 required autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn-principal">Iniciar sesión</button>
+      </form>
+
+      <p class="login-enlace">¿No tienes cuenta? <a href="/registro">Crea una</a></p>
+    </div>
+  </main>
+</body>
+</html>

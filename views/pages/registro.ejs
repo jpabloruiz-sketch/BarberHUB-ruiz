@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body class="body-login">
+  <main class="login-contenedor">
+    <div class="login-tarjeta">
+      <div class="login-marca">
+        <h1 class="logo logo-grande">Barber<span>HUB</span></h1>
+        <p class="login-subtitulo">Crea tu cuenta para comenzar</p>
+      </div>
+
+      <% if (typeof error !== 'undefined' && error) { %>
+        <div class="alerta" role="alert"><%= error %></div>
+      <% } %>
+
+      <form action="/registro" method="POST" class="formulario" autocomplete="on">
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
+                 value="<%= typeof datos !== 'undefined' && datos.nombre ? datos.nombre : '' %>"
+                 required autofocus autocomplete="name">
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="000 000 0000"
+                 value="<%= typeof datos !== 'undefined' && datos.telefono ? datos.telefono : '' %>"
+                 required autocomplete="tel">
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com"
+                 value="<%= typeof datos !== 'undefined' && datos.correo ? datos.correo : '' %>"
+                 required autocomplete="username">
+        </div>
+
+        <div class="campo">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" placeholder="Mínimo 6 caracteres"
+                 minlength="6" required autocomplete="new-password">
+        </div>
+
+        <div class="campo">
+          <label for="confirmar">Confirmar contraseña</label>
+          <input type="password" id="confirmar" name="confirmar" placeholder="Repite tu contraseña"
+                 minlength="6" required autocomplete="new-password">
+        </div>
+
+        <button type="submit" class="btn-principal">Crear cuenta</button>
+      </form>
+
+      <p class="login-enlace">¿Ya tienes cuenta? <a href="/login">Inicia sesión</a></p>
+    </div>
+  </main>
+</body>
+</html>

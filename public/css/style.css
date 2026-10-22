@@ -1,0 +1,234 @@
+:root {
+  --fondo: #111417;
+  --superficie: #1a1f24;
+  --borde: #2a313a;
+  --texto: #e8eaed;
+  --texto-suave: #9aa4af;
+  --acento: #d4a24c;
+  --acento-hover: #e6b566;
+  --error: #e5484d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--texto);
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--acento);
+}
+
+.logo-grande {
+  font-size: 2.2rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+}
+
+.header-sesion {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-usuario {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.btn-salir {
+  background: transparent;
+  color: var(--acento);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-salir:hover {
+  background: var(--borde);
+  border-color: var(--acento);
+}
+
+/* Login */
+.body-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(212, 162, 76, 0.12), transparent 45%),
+    var(--fondo);
+}
+
+.login-contenedor {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5rem;
+}
+
+.login-tarjeta {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.login-marca {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.login-subtitulo {
+  margin-top: 0.5rem;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.alerta {
+  background: rgba(229, 72, 77, 0.12);
+  border: 1px solid rgba(229, 72, 77, 0.5);
+  color: #ff8a8d;
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.alerta-exito {
+  background: rgba(64, 190, 120, 0.12);
+  border-color: rgba(64, 190, 120, 0.5);
+  color: #7ee2a8;
+}
+
+.login-enlace {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.login-enlace a {
+  color: var(--acento);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-enlace a:hover {
+  text-decoration: underline;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.campo input {
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  color: var(--texto);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: var(--acento);
+}
+
+.btn-principal {
+  margin-top: 0.5rem;
+  background: var(--acento);
+  color: #14161a;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-principal:hover {
+  background: var(--acento-hover);
+}
+
+/* Dashboard */
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+.bienvenida h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.texto-suave {
+  color: var(--texto-suave);
+}
+
+.tarjetas {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.tarjeta {
+  display: block;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.tarjeta:hover {
+  border-color: var(--acento);
+  transform: translateY(-3px);
+}

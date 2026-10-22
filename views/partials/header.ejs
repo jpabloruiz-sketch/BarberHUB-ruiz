@@ -1,0 +1,11 @@
+<header class="header">
+  <a href="/" class="logo">Barber<span>HUB</span></a>
+  <% if (typeof usuario !== 'undefined' && usuario) { %>
+    <div class="header-sesion">
+      <span class="header-usuario"><%= usuario.nombre %></span>
+      <form action="/logout" method="POST" class="form-salir">
+        <button type="submit" class="btn-salir">Salir</button>
+      </form>
+    </div>
+  <% } %>
+</header>
